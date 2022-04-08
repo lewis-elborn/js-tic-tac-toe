@@ -1,7 +1,11 @@
-*, *::after *::before {
+/* Css Initial Setup */
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
+/* Typography: Perfect Third */
 html {font-size: 100%;} /*16px*/
 
 body {
@@ -10,6 +14,7 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
+  margin: 0;
 }
 
 p {margin-bottom: 1rem;}
@@ -35,3 +40,33 @@ h4 {font-size: 1.563rem;}
 h5 {font-size: 1.25rem;}
 
 small, .text_small {font-size: 0.8rem;}
+
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+/* header & footer styles */
+.hero {
+  background: #eee;
+  padding: 3rem 0;
+}
+
+/* Begin: Game Styles */
+.board {
+    width: 100vh;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.board-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #000;
+    border: 1px solid #fff;
+}

@@ -1,7 +1,6 @@
 window.onload = function() {
-    gamestate();
-    console.log("Hello! I am a console log!!");
+    gameState();
 };
-function gamestate() {
-    alert("Hello! I am an alert box!!");
+function gameState() {
+    console.log("Hello! I am a console log!!");
 }
