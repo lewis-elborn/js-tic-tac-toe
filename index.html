@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Essential Meta -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <head>
+        <!-- Essential Meta -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
 
-    <!-- title -->
-    <title>Neumorphic Tic-Tac-Toe</title>
-    <base href="https://lewis-elborn.github.io/js-tic-tac-toe/">
+        <!-- title -->
+        <title>Neumorphic Tic-Tac-Toe</title>
+        <base href="/" />
 
-    <!-- Seo Meta -->
-    <meta name="keywords" content="neumorphic, tic-tac-toe, html, css, js, javascript"/>
-    <meta name="description" content="Neumorphic tic tac toe game built with html, css & js.">
-    <meta name="abstract" content="Neumorphic tic tac toe game built with html, css & js.">
-    <meta name="author" content="Lewis Elborn" />
-    <meta name="copyright" content="Lewis Elborn" />
-    <meta name="robots" content="index"/>
+        <!-- Seo Meta -->
+        <meta
+            name="keywords"
+            content="neumorphic, tic-tac-toe, html, css, js, javascript"
+        />
+        <meta
+            name="description"
+            content="Neumorphic tic tac toe game built with html, css & js."
+        />
+        <meta
+            name="abstract"
+            content="Neumorphic tic tac toe game built with html, css & js."
+        />
+        <meta name="author" content="Lewis Elborn" />
+        <meta name="copyright" content="Lewis Elborn" />
+        <meta name="robots" content="index" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/assets/images/favicon.svg"
+        />
+        <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
 
-    <!-- CSS links -->
-    <link rel="stylesheet" href="css/styles.css">
+        <!-- CSS links -->
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
 
-    <!-- Script links -->
-    <script src="js/app.js" type="text/javascript" defer></script>
-</head>
-<body>
-    <div id="app">
-        <div class="hero">
-            <h1 class="hero-title">Neumorphic Tic-Tac-Toe</h1>
-            <p class="hero-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia magnam blanditiis cum optio minima nesciunt, earum quae illum et eius, reprehenderit mollitia. Eveniet aliquam, natus dolor libero mollitia reiciendis quo.</p>
+        <!-- Script links -->
+        <script src="js/app.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="hero">
+                <div class="inner">
+                    <h1 class="hero-title">Neumorphic Tic-Tac-Toe</h1>
+                    <p class="hero-description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Officia magnam blanditiis cum optio minima
+                        nesciunt, earum quae illum et eius, reprehenderit
+                        mollitia. Eveniet aliquam, natus dolor libero mollitia
+                        reiciendis quo.
+                    </p>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="board" id="board">
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                    <div class="board-cell" data-cell></div>
+                </div>
+            </div>
+            <div class="game-state" id="game-state">
+                <div class="game-state-prompt" id="game-state-prompt">
+                    <h1 class="game-current-state"></h1>
+                    <p class="game-state-message"></p>
+                    <span class="button-group">
+                        <button
+                            class="button reset-button"
+                            id="reset-button"
+                            role="button"
+                        >
+                            Play Again?
+                        </button>
+                        <button
+                            class="button close-button"
+                            id="close-button"
+                            role="button"
+                        >
+                            Close
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="inner">
+                    <p class="footer-text text_small">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        Neumorphic Tic-Tac-Toe, by Lewis Elborn.</br>
+                        Thanks for stopping by, this project was fun to make! Hopefully, it was fun to play too.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="board" id="board">
-            <div class="board-cell" data-cell>X</div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-            <div class="board-cell" data-cell></div>
-        </div>
-        <div class="game-state" id="game-state">
-            <h1 class="game-current-state"></h1>
-            <p class="game-state-message"></p>
-            <button class="reset-button" id="reset-button">Play Again?</button>
-        </div>
-        <div class="footer">
-            <p class="footer-text">&copy; <script type="text/javascript">document.write( new Date().getFullYear() );</script> Neumorphic Tic-Tac-Toe, by Lewis Elborn.</p>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

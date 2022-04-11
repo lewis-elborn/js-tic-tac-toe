@@ -6,56 +6,88 @@
 }
 
 /* Typography: Perfect Third */
-html {font-size: 100%;} /*16px*/
+html {
+    font-size: 100%;
+} /*16px*/
 
 body {
-  background: white;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  line-height: 1.75;
-  color: #000000;
-  margin: 0;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #000000;
+    margin: 0;
 }
 
-p {margin-bottom: 1rem;}
+p {
+    margin-bottom: 1rem;
+}
 
-h1, h2, h3, h4, h5 {
-  margin: 3rem 0 1.38rem;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  line-height: 1.3;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 3rem 0 1.38rem;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 3.052rem;
+    margin-top: 0;
+    font-size: 3.052rem;
 }
 
-h2 {font-size: 2.441rem;}
+h2 {
+    font-size: 2.441rem;
+}
 
-h3 {font-size: 1.953rem;}
+h3 {
+    font-size: 1.953rem;
+}
 
-h4 {font-size: 1.563rem;}
+h4 {
+    font-size: 1.563rem;
+}
 
-h5 {font-size: 1.25rem;}
+h5 {
+    font-size: 1.25rem;
+}
 
-small, .text_small {font-size: 0.8rem;}
+small,
+.text_small {
+    font-size: 0.8rem;
+}
 
 :root {
-  --cell-size: 100px;
-  --mark-size: calc(var(--cell-size) * 0.9);
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9);
+    --toggle-size: 25px;
 }
 
-/* header & footer styles */
+.inner {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0px 1rem;
+}
+
+/* Header & Footer Styles */
 .hero {
-  background: #eee;
-  padding: 3rem 0;
+    background: #eee;
+    padding: 3rem 0;
+    text-align: center;
 }
-
-/* Begin: Game Styles */
+p.hero-description {
+    color: #555;
+}
+.footer {
+    text-align: center;
+    color: #999;
+}
+/* Board Styles */
 .board {
-    width: 100vh;
-    height: 100vh;
+    margin: 80px auto;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -65,8 +97,167 @@ small, .text_small {font-size: 0.8rem;}
 }
 
 .board-cell {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     width: var(--cell-size);
     height: var(--cell-size);
-    background-color: #000;
-    border: 1px solid #fff;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.board-cell:first-child,
+.board-cell:nth-child(2),
+.board-cell:nth-child(3) {
+    border-top: none;
+}
+
+.board-cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.board-cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.board-cell:last-child,
+.board-cell:nth-child(8),
+.board-cell:nth-child(7) {
+    border-bottom: none;
+}
+
+/* If cell marked... */
+.board-cell.x-mark,
+.board-cell.o-mark {
+    cursor: not-allowed;
+}
+
+.board-cell.x-mark::before,
+.board-cell.x-mark::after,
+.board-cell.o-mark::before {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Hover Effects */
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::before,
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::after,
+.board.o-mark .board-cell:not(.x-mark):not(.o-mark):hover::before {
+    background-color: lightgrey;
+}
+
+/* Mark Styles */
+.board-cell.x-mark::before,
+.board-cell.x-mark::after,
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::before,
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+}
+.board-cell.x-mark::before,
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::before {
+    transform: rotate(45deg);
+}
+.board-cell.x-mark::after,
+.board.x-mark .board-cell:not(.x-mark):not(.o-mark):hover::after {
+    transform: rotate(-45deg);
+}
+
+.board-cell.o-mark::before,
+.board-cell.o-mark::after,
+.board.o-mark .board-cell:not(.x-mark):not(.o-mark):hover::before,
+.board.o-mark .board-cell:not(.x-mark):not(.o-mark):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.board-cell.o-mark::before,
+.board.o-mark .board-cell:not(.x-mark):not(.o-mark):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+.board-cell.o-mark::after,
+.board.o-mark .board-cell:not(.x-mark):not(.o-mark):hover::after {
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Game State Prompt */
+.game-state {
+    content: '';
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 0;
+}
+
+.game-state-prompt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2.5rem;
+    border: 1px solid #7aa7c7;
+    border-radius: 0.25rem;
+}
+
+h1.game-current-state {
+    color: rgb(0, 0, 0);
+}
+
+p.game-state-message {
+    color: rgb(0, 0, 0);
+}
+
+.game-state .button {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px 0.8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.game-state .button:hover,
+.game-state .button:focus {
+    background-color: #b3d3ea;
+    color: #2c5777;
+}
+
+.game-state .button:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.game-state .button:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+}
+.game-state.show {
+    display: flex;
 }

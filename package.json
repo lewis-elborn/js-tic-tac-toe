@@ -1,0 +1,31 @@
+{
+    "name": "js-tic-tac-toe",
+    "version": "1.0.0",
+    "description": "Neumorphic tic tac toe game built with html, css & js.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lewis-elborn/js-tic-tac-toe.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lewis-elborn/js-tic-tac-toe/issues"
+    },
+    "homepage": "https://github.com/lewis-elborn/js-tic-tac-toe#readme",
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.18.4",
+        "@typescript-eslint/eslint-plugin": "^5.18.0",
+        "@typescript-eslint/parser": "^5.18.0",
+        "eslint": "^8.13.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-html": "6.2.0",
+        "eslint-plugin-react": "^7.29.4",
+        "prettier": "^2.6.2"
+    }
+}
