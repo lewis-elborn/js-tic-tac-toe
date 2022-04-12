@@ -18,7 +18,7 @@
     --tile-base-color: hsl(210, 56%, 93%);
     --tile-base-active-color: linear-gradient(
         225deg,
-        hsl(210, 21%, 84%),
+        hsl(210, 56%, 93%),
         hsl(185, 100%, 98%)
     );
     --tile-shadow: -13px 13px 26px hsl(210, 24%, 85%),
@@ -153,6 +153,12 @@ p.hero-description {
     height: var(--cell-size);
     cursor: pointer;
     margin: 1.5rem;
+}
+
+.board-cell:hover {
+    border-radius: var(--border-radius);
+    background: var(--tile-base-active-color);
+    box-shadow: var(--tile-shadow);
 }
 
 /* If cell marked... */

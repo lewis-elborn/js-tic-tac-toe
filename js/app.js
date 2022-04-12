@@ -42,6 +42,7 @@ function gameStart() {
     cells.forEach((cell) => {
         cell.classList.remove(xClass)
         cell.classList.remove(oClass)
+        cell.classList.remove('tile-active')
         cell.removeEventListener('click', handleClick)
         cell.addEventListener('click', handleClick, { once: true })
     })
@@ -117,6 +118,7 @@ function isDraw() {
  */
 function placeMark(cell, currentClass) {
     cell.classList.add(currentClass)
+    cell.classList.add('tile-active')
 }
 
 /**
