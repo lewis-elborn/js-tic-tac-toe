@@ -220,7 +220,7 @@ p.game-state-message {
     color: rgb(0, 0, 0);
 }
 
-.game-state .button {
+.button {
     background-color: #e1ecf4;
     border-radius: 3px;
     border: 1px solid #7aa7c7;
@@ -243,21 +243,31 @@ p.game-state-message {
     white-space: nowrap;
 }
 
-.game-state .button:hover,
-.game-state .button:focus {
+.button:hover,
+.button:focus {
     background-color: #b3d3ea;
     color: #2c5777;
 }
 
-.game-state .button:focus {
+.button:focus {
     box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
 }
 
-.game-state .button:active {
+.button:active {
     background-color: #a0c7e4;
     box-shadow: none;
     color: #2c5777;
 }
 .game-state.show {
     display: flex;
+}
+
+.closed-reset {
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.closed-reset.show {
+    display: block;
 }

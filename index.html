@@ -50,12 +50,12 @@
                 <div class="inner">
                     <h1 class="hero-title">Neumorphic Tic-Tac-Toe</h1>
                     <p class="hero-description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Officia magnam blanditiis cum optio minima
-                        nesciunt, earum quae illum et eius, reprehenderit
-                        mollitia. Eveniet aliquam, natus dolor libero mollitia
-                        reiciendis quo.
+                        Hey there, 👋
                     </p>
+                    <p class="hero-description">
+                        Welcome to my neuromorphic tic-tac-toe game, I hope you enjoy it as much as I enjoyed making it. For this project I came across an awesome video from Kyle at Web Dev Simplified and I decided to give it a go. The result is what you see here.
+                    </p>
+                    <p class="links"><a href="https://www.youtube.com/watch?v=Y-GkMjUZsmM" target="_blank" aria-label="Watch Kyle's Video on Youtube?">Watch Kyle's Video</a></p>
                 </div>
             </div>
             <div class="inner">
@@ -70,11 +70,20 @@
                     <div class="board-cell" data-cell></div>
                     <div class="board-cell" data-cell></div>
                 </div>
+                <div class="closed-reset" id="closed-reset">
+                    <button
+                        class="button closed-reset-button"
+                        id="closed-reset-button"
+                        role="button"
+                    >
+                        Play Again?
+                    </button>
+                </div>
             </div>
             <div class="game-state" id="game-state">
                 <div class="game-state-prompt" id="game-state-prompt">
-                    <h1 class="game-current-state"></h1>
-                    <p class="game-state-message"></p>
+                    <h1 class="game-current-state" data-win-title>X</h1>
+                    <p class="game-state-message" data-win-message>Y</p>
                     <span class="button-group">
                         <button
                             class="button reset-button"
@@ -101,7 +110,8 @@
                             document.write(new Date().getFullYear())
                         </script>
                         Neumorphic Tic-Tac-Toe, by Lewis Elborn.</br>
-                        Thanks for stopping by, this project was fun to make! Hopefully, it was fun to play too.
+                        Thanks for stopping by, this project was fun to make! Hopefully, it was fun to play too.</br>
+                        Check out my other repo's on <a href="https://github.com/lewis-elborn?tab=repositories" target="_blank" aria-label="See more of my repo's on Github">Github?</a>
                     </p>
                 </div>
             </div>
