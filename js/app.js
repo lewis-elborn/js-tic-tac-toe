@@ -47,6 +47,9 @@ function gameStart() {
     })
     boardPlayerState()
     winUI.classList.remove('show')
+    winTitle.classList.remove('x-mark')
+    winTitle.classList.remove('o-mark')
+    winTitle.classList.remove('draw')
     closedResetUI.classList.remove('show')
     board.classList.remove('isDisabled')
 }
@@ -81,14 +84,13 @@ function handleClick(e) {
  */
 function endGame(draw) {
     if (draw) {
-        console.log(winTitle)
-        console.log(winMessage)
+        winTitle.classList.add('draw')
         winTitle.innerHTML = "It's a draw!"
         winMessage.innerHTML = 'Why not give it another go?'
     } else {
-        console.log(playerTurn ? 'X Wins!' : 'O Wins!')
-        console.log(winTitle)
-        console.log(winMessage)
+        playerTurn
+            ? winTitle.classList.add('x-mark')
+            : winTitle.classList.add('o-mark')
         winTitle.innerHTML = `${playerTurn ? 'X Wins!' : 'O Wins!'}`
         winMessage.innerHTML = `${
             playerTurn
