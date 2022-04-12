@@ -7,7 +7,7 @@
 <!-- Readme hero -->
 <div align="center">
   <a href="https://github.com/lewis-elborn/js-tic-tac-toe">
-    <img src="assets/favicon.svg" alt="favicon" width="80" height="80">
+    <img src="assets/images/favicon.svg" alt="favicon" width="80" height="80">
   </a>
 
 <h3 align="center">Neumorphic Tic-Tac-Toe</h3>
